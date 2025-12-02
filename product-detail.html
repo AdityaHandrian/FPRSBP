@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="javascript:history.back()" class="back-link">← Kembali</a>
+            <h1>📦 Detail Produk</h1>
+        </header>
+
+        <main>
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Memuat detail produk...</p>
+            </div>
+
+            <!-- Product Detail Section -->
+            <section id="productDetailSection" class="product-detail-section hidden">
+                <!-- Product Info -->
+                <div class="product-detail-card">
+                    <div class="product-detail-image">
+                        <div id="productImage" class="product-image-placeholder"></div>
+                    </div>
+                    <div class="product-detail-info">
+                        <div class="category-badge" id="productCategory"></div>
+                        <h2 id="productName"></h2>
+                        <div class="rating-display" id="productRating"></div>
+                        <p id="productDescription" class="product-description"></p>
+                        
+                        <!-- Sentiment Analysis -->
+                        <div class="sentiment-section">
+                            <h3>📊 Analisis Sentimen Ulasan</h3>
+                            <div id="sentimentBadges" class="sentiment-badges"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Section -->
+                <div class="reviews-section">
+                    <h3>⭐ Ulasan Pembeli</h3>
+                    <div id="reviewsContainer"></div>
+                </div>
+            </section>
+
+            <!-- Error State -->
+            <div id="errorState" class="empty-state hidden">
+                <div class="empty-icon">❌</div>
+                <h3>Produk tidak ditemukan</h3>
+                <p>Maaf, kami tidak dapat menemukan detail produk yang Anda cari</p>
+                <button class="btn btn-primary" onclick="history.back()">
+                    Kembali
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>

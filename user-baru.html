@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Baru - Sistem Rekomendasi</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Kembali</a>
+            <h1>✨ Mode User Baru</h1>
+        </header>
+
+        <main>
+            <!-- User Registration -->
+            <section class="input-section">
+                <h2>Selamat Datang! Mari Berkenalan</h2>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="newUserName" 
+                        placeholder="Masukkan nama Anda"
+                        required
+                    >
+                    <button class="btn btn-primary" id="startSelectionBtn">
+                        Mulai Memilih Produk
+                    </button>
+                </div>
+            </section>
+
+            <!-- Product Selection Section -->
+            <section id="productSelectionSection" class="product-selection-section hidden">
+                <div class="selection-header">
+                    <h2>🛒 Pilih Minimal 5 Produk yang Anda Sukai</h2>
+                    <div class="selection-stats">
+                        <span class="stat-item">
+                            Produk dipilih: <strong id="selectedCount">0</strong>/5
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="productsLoadingState" class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Memuat produk...</p>
+                </div>
+
+                <!-- Product Grid with Selection -->
+                <div id="productsGrid" class="product-grid selection-grid"></div>
+
+                <!-- Generate Button -->
+                <div class="action-section">
+                    <button class="btn btn-success" id="generateRecommendationsBtn" disabled>
+                        🎯 Generate Rekomendasi
+                    </button>
+                    <p class="hint">Pilih minimal 5 produk untuk melanjutkan</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/user-baru.js"></script>
+</body>
+</html>

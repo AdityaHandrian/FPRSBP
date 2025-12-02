@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Lama - Sistem Rekomendasi</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Kembali</a>
+            <h1>👤 Mode User Lama</h1>
+        </header>
+
+        <main>
+            <!-- Input User ID Section -->
+            <section class="input-section">
+                <h2>Masukkan User ID Anda</h2>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="userIdInput" 
+                        placeholder="Contoh: user_001"
+                        list="userSuggestions"
+                        autocomplete="off"
+                    >
+                    <datalist id="userSuggestions"></datalist>
+                    <button class="btn btn-primary" id="loadHistoryBtn">
+                        Lihat Riwayat Saya
+                    </button>
+                </div>
+                <p class="hint">💡 Coba: user_001, user_002, user_003</p>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Memuat riwayat pembelian...</p>
+            </div>
+
+            <!-- User History Section -->
+            <section id="historySection" class="history-section hidden">
+                <h2>📦 Riwayat Pembelian Anda</h2>
+                <div id="historyGrid" class="product-grid"></div>
+                
+                <div class="action-section">
+                    <button class="btn btn-success" id="getRecommendationsBtn">
+                        🎯 Dapatkan Rekomendasi
+                    </button>
+                </div>
+            </section>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-icon">📭</div>
+                <h3>User ID tidak ditemukan</h3>
+                <p>Silakan coba User ID lain atau daftar sebagai user baru</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/user-lama.js"></script>
+</body>
+</html>

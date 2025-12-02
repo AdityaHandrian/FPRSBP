@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Produk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+            <h1>🎯 Rekomendasi Produk untuk Anda</h1>
+        </header>
+
+        <main>
+            <!-- User Info -->
+            <section class="user-info-section">
+                <div class="user-info-card">
+                    <span id="userInfo"></span>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Menghasilkan rekomendasi...</p>
+            </div>
+
+            <!-- Recommendations Grid -->
+            <section id="recommendationsSection" class="recommendations-section hidden">
+                <h2>✨ Produk yang Direkomendasikan</h2>
+                <div id="recommendationsGrid" class="product-grid"></div>
+            </section>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-icon">🔍</div>
+                <h3>Tidak ada rekomendasi tersedia</h3>
+                <p>Maaf, kami tidak dapat menemukan produk yang cocok untuk Anda saat ini</p>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                    Coba Lagi
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/recommendations.js"></script>
+</body>
+</html>
